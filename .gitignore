@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .env
 .env.local
 .env.*.local
@@ -13,3 +14,6 @@ venv/
 *.log
 .vscode/
 .idea/
+=======
+node_modules
+>>>>>>> 25e48cab115af0b84e1c87dc83f24ecadd1a0fc4
