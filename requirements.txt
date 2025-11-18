@@ -1,0 +1,6 @@
+# Pinned versions used in this environment
+requests==2.32.5
+openai>=1.0.0
+# Add other generator deps here (if needed):
+# - python-dotenv
+# - any other 3rd-party libs the generator uses
