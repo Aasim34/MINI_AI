@@ -54,10 +54,14 @@ def run_generator(idea: str, api_key: str) -> dict:
             output_lines = result.stdout.strip().split('\n')
             project_path = ""
             
-            # Look for the project path in the output
+            # Look for the project path in the output (try both formats)
             for line in output_lines:
-                if line.startswith("[*] Location:"):
-                    project_path = line.replace("[*] Location:", "").strip()
+                if "[*] Location:" in line or "Location:" in line:
+                    # Extract the path after "Location:"
+                    if "[*] Location:" in line:
+                        project_path = line.split("[*] Location:", 1)[1].strip()
+                    else:
+                        project_path = line.split("Location:", 1)[1].strip()
                     break
             
             # Extract project name and slug from the path
